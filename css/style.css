@@ -3,4 +3,74 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+    a:hover{
+      cursor: pointer;
+    }
+
+/* Main */
+.big-container {
+  display: flex;
+  background-color: lightgreen;
+}
+  /* Smaller container */
+  .container {
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+  }
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      height: 10vh;
+      background-color: plum;
+    }
+      .top-bar > a {
+        justify-content: flex-end;
+        align-self: center;
+        color: white;
+        border: 1px solid white;
+        padding: 5px 20px;
+        border-radius: 90px;
+        font-size: 14px;
+      }
+    /* Side nav bar */
+    .nav-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 200px;
+      height: 90vh;
+      background-color: orchid;
+      }
+      .nav-bar > nav {
+
+      }
+      #account {
+
+      }
+    /* Library */
+    #library {
+      display: flex;
+      align-self: center;
+      background-color: pink;
+    }
+
+
+/* Footer */
+footer {
+  display: flex;
+  height: 10vh;
+  background-color: purple;
 }
