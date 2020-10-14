@@ -10,6 +10,9 @@
     margin: 0;
     padding: 0;
   }
+  img {
+    max-width: 100%;
+  }
   a {
     text-decoration: none;
   }
@@ -54,18 +57,42 @@
       height: 90vh;
       background-color: orchid;
       }
-      .nav-bar > nav {
-
-      }
-      #account {
-
-      }
     /* Library */
     #library {
       display: flex;
-      align-self: center;
+      flex-direction: column;
       background-color: pink;
     }
+      /* Recently played */
+      #r-played {
+        display: flex;
+        justify-content: space-evenly;
+      }
+        #r-played > div {
+          width: calc((100% / 6) - 20px);
+        }
+
+      /* Creato per John Doe */
+      #creato {
+        display: flex;
+      }
+        #creato > div {
+          width: 200px;
+        }
+        #creato div img {
+          padding: 5px;
+        }
+      /* Artisti più popolari */
+      #artisti {
+        display: flex;
+      }
+        #artisti > div {
+          width: 200px;
+        }
+        #artisti div img {
+          padding: 5px;
+        }
+
 
 
 /* Footer */
