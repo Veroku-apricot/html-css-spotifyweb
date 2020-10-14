@@ -46,15 +46,17 @@
       background: rgb(8,11,18);
       background: linear-gradient(90deg, rgba(8,11,18,0.3452731434370623) 0%, rgba(8,11,18,0.7150210425967262) 31%, rgba(8,11,18,1) 100%);
       position: fixed;
+      padding-right: 5px;
     }
       .top-bar > a {
         justify-content: flex-end;
         align-self: center;
         color: white;
         border: 1px solid white;
-        padding: 5px 20px;
+        padding: 10px 30px;
         border-radius: 90px;
         font-size: 12px;
+        font-weight: bold;
       }
     /* Side nav bar */
     .nav-bar {
@@ -64,10 +66,19 @@
       width: 200px;
       height: calc(100vh - 70px);
       background-color: black;
+      padding: 15px;
       }
+
+        #logo > img {
+          max-width: 125px;
+          padding-bottom: 25px;
+        }
         .mini {
           max-width: 25px;
         }
+      #playlist {
+        margin-top: 20px;
+      }
 
     /* Library */
     #library {
@@ -75,21 +86,28 @@
       flex-direction: column;
       background-color: rgb(20, 25, 34);
       margin-top: 70px;
-      padding: 20px;
+      padding: 20px 0 20px 20px;
     }
       /* Top list */
       .top-list {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
       }
+        .top-list > a {
+          font-size: 12px;
+          font-weight: bold;
+          padding: 10px;
+          color: grey;
+        }
       /* Recently played */
       #r-played {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
       }
         #r-played > div {
-          width: calc((100% / 6) - 20px);
+          width: 200px;
+          padding: 15px 15px 15px 0;
         }
 
       /* Creato per John Doe */
@@ -100,7 +118,7 @@
           width: 200px;
         }
         #creato div img {
-
+          padding: 15px 15px 10px 0;
         }
       /* Artisti più popolari */
       #artisti {
@@ -110,10 +128,8 @@
           width: 200px;
         }
         #artisti div img {
-
+          padding: 15px 15px 10px 0;
         }
-
-
 
 /* Footer */
 footer {
@@ -123,14 +139,38 @@ footer {
   justify-content: space-between;
 }
   footer div {
+    display: flex;
     background-color: lawngreen;
     height: 100%;
+    padding: 10px 5px;
+    align-items: center;
   }
 
   footer > div:first-child, footer > div:last-child{
     width: 20%;
   }
+    footer div:first-child img {
+      max-height: 100%;
+    }
+    footer div:first-child div {
+      display: flex;
+      flex-direction: column;
+    }
 
   #player {
+    display: flex;
     width: 50%;
+    flex-direction: column;
   }
+    #player div:last-child {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      width: 100%;
+    }
+    #player div:last-child > div {
+      width: 80%;
+      height: 5px;
+      background-color: grey;
+      padding: 0;
+    }
