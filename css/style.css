@@ -40,6 +40,13 @@ a:hover, img:hover{
   .imgbox:hover .play-b {
     opacity: 1;
   }
+  .greytxt:hover {
+    color: white;
+  }
+  .top-bar > a:hover {
+    padding: 12px 32px;
+    font-size: 14px;
+  }
 
 /* Query */
 @media all and (max-width: 970px) {
@@ -81,6 +88,7 @@ a:hover, img:hover{
       background: linear-gradient(90deg, rgba(8,11,18,0.3452731434370623) 0%, rgba(8,11,18,0.7150210425967262) 31%, rgba(8,11,18,1) 100%);
       position: fixed;
       padding-right: 5px;
+      z-index: 100;
     }
       .top-bar > a {
         justify-content: flex-end;
@@ -100,7 +108,11 @@ a:hover, img:hover{
       width: 12%;
       height: calc(100vh - 80px);
       background-color: black;
-      padding-left: 15px;
+      padding: 0 15px;
+      }
+      .nav-bar > div:first-child {
+        height: calc(100% - 80px);
+        overflow: auto;
       }
       .nav-bar a {
         font-size: 12px;
@@ -114,26 +126,38 @@ a:hover, img:hover{
           display: none;
         }
         .mini {
-          max-width: 20px;
+          max-width: 18px;
+          margin-right: 5px;
         }
+
       #playlist {
         margin-top: 20px;
       }
-        #playlist > ul {
-          height: 50%;
-          overflow-y: auto;
-        }
         #playlist li {
           padding: 5px 0;
         }
+        #playlist .fas.fa-plus-square {
+          font-size: 30px;
+          padding-right: 5px;
+        }
       #account {
-        height: 60px;
+        height: 80px;
+        width: 100%;
+      }
+      #account h5 {
+        margin: 10px 0;
+      }
+      #account h5 > img {
+        background-color: grey;
+        border-radius: 100%;
+        height: 18px;
+        width: 18px;
       }
 
     /* Library */
     #library {
       background-color: rgb(20, 25, 34);
-      margin-top: 70px;
+      margin: 70px 0;
       padding: 20px 0 20px 20px;
     }
       /* Top list */
@@ -147,6 +171,9 @@ a:hover, img:hover{
           font-weight: bold;
           padding: 10px;
         }
+          .top-list > a:first-child {
+            border-bottom: 1px solid lawngreen;
+          }
       /* Recently played */
       #r-played {
         display: flex;
@@ -174,6 +201,7 @@ a:hover, img:hover{
       #creato {
         display: flex;
         padding-bottom: 15px;
+        width: 100%;
       }
         #creato > div {
           width: 200px;
@@ -184,6 +212,7 @@ a:hover, img:hover{
       /* Artisti più popolari */
       #artisti {
         display: flex;
+        width: 100%;
       }
         #artisti > div {
           width: 200px;
@@ -197,12 +226,14 @@ a:hover, img:hover{
 footer {
   display: flex;
   height: 80px;
+  width: 100%;
   background-color: rgb(40, 40, 40);
   justify-content: space-between;
+  position: fixed;
+
 }
   footer div {
     display: flex;
-    /* background-color: lawngreen; */
     height: 100%;
     padding: 10px 5px;
     align-items: center;
@@ -218,12 +249,20 @@ footer {
       display: flex;
       flex-direction: column;
     }
+    footer div:first-child a {
+      font-size: 14px;
+      padding: 5px;
+    }
+    footer p {
+      font-size: 10px;
+    }
 
   #player {
     display: flex;
     width: 50%;
     flex-direction: column;
-  }
+    padding-top: 0;
+   }
     #player div:last-child {
       display: flex;
       justify-content: center;
@@ -238,12 +277,29 @@ footer {
       background: linear-gradient(90deg, rgba(195,195,195,1) 34%, rgba(105,105,105,1) 34%, rgba(105,105,105,1) 100%);
       padding: 0;
       border-radius: 90px;
+      margin: 0 10px;
     }
-  #volume > div {
-    width: 50%;
-    height: 5px;
-    background: rgb(195,195,195);
-    background: linear-gradient(90deg, rgba(195,195,195,1) 34%, rgba(105,105,105,1) 34%, rgba(105,105,105,1) 100%);
-    padding: 0;
-    border-radius: 90px;
+    #player span {
+      font-size: 12px;
+    }
+      #buttons {
+        padding-bottom: 0;
+      }
+      #buttons > a {
+        padding-right: 20px;
+      }
+      #buttons .far.fa-play-circle {
+        font-size: 30px;
+      }
+  #volume > a {
+    font-size: 12px;
+    padding: 5px;
   }
+    #volume > div {
+      width: 50%;
+      height: 5px;
+      background: rgb(195,195,195);
+      background: linear-gradient(90deg, rgba(195,195,195,1) 34%, rgba(105,105,105,1) 34%, rgba(105,105,105,1) 100%);
+      padding: 0;
+      border-radius: 90px;
+    }
