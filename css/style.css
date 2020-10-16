@@ -34,9 +34,28 @@
 a:hover, img:hover{
   cursor: pointer;
 }
-  .imgbox:hover {
+  .imgbox:hover img {
     filter:brightness(0.3);
   }
+  .imgbox:hover .play-b {
+    opacity: 1;
+  }
+
+/* Query */
+@media all and (max-width: 970px) {
+  #r-played > div {
+    width: calc(100% / 3);
+  }
+}
+
+@media all and (max-width: 750px) {
+  #r-played > div, #creato > div, #artisti > div {
+    width: calc(100% / 2);
+  }
+
+
+}
+
 
 /* Main */
 .big-container {
@@ -46,9 +65,8 @@ a:hover, img:hover{
 }
   /* Smaller container */
   .container {
-    width: calc(100% - 200px);
     display: flex;
-    flex-direction: column;
+    width: 88%;
     background-color: rgb(20, 25, 34);
     height: calc(100vh - 80px);
     overflow: auto;
@@ -58,7 +76,7 @@ a:hover, img:hover{
       display: flex;
       justify-content: flex-end;
       height: 70px;
-      width: calc(100% - 200px);
+      width: 88%;
       background: rgb(8,11,18);
       background: linear-gradient(90deg, rgba(8,11,18,0.3452731434370623) 0%, rgba(8,11,18,0.7150210425967262) 31%, rgba(8,11,18,1) 100%);
       position: fixed;
@@ -79,10 +97,10 @@ a:hover, img:hover{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 200px;
+      width: 12%;
       height: calc(100vh - 80px);
       background-color: black;
-      padding: 15px 15px 0;
+      padding-left: 15px;
       }
       .nav-bar a {
         font-size: 12px;
@@ -90,7 +108,10 @@ a:hover, img:hover{
       }
         #logo > img {
           max-width: 125px;
-          padding-bottom: 25px;
+          padding: 20px 0;
+        }
+        #logo > img:last-child {
+          display: none;
         }
         .mini {
           max-width: 20px;
@@ -99,21 +120,18 @@ a:hover, img:hover{
         margin-top: 20px;
       }
         #playlist > ul {
-          /* height: 500px;
-          overflow: auto; */
+          height: 50%;
+          overflow-y: auto;
         }
         #playlist li {
           padding: 5px 0;
         }
       #account {
         height: 60px;
-
       }
 
     /* Library */
     #library {
-      display: flex;
-      flex-direction: column;
       background-color: rgb(20, 25, 34);
       margin-top: 70px;
       padding: 20px 0 20px 20px;
@@ -134,9 +152,22 @@ a:hover, img:hover{
         display: flex;
         flex-wrap: wrap;
       }
-        #r-played > div {
-          width: 200px;
+        .album {
+          width: calc(100% / 6);
           padding: 15px 15px 15px 0;
+        }
+      .imgbox {
+        position: relative;
+      }
+        .play-b {
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          text-align: center;
+          font-size: 50px;
         }
 
       /* Creato per John Doe */
@@ -159,6 +190,7 @@ a:hover, img:hover{
         }
         #artisti div img {
           padding: 15px 15px 10px 0;
+          border-radius: 100%;
         }
 
 /* Footer */
