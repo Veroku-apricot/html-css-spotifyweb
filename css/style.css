@@ -146,8 +146,9 @@ a:hover, img:hover{
       }
       #account h5 {
         margin: 10px 0;
+        display: inline-block;
       }
-      #account h5 > img {
+      #account div > img {
         background-color: grey;
         border-radius: 100%;
         height: 18px;
